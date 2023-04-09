@@ -44,7 +44,7 @@ jobs:
         image_tag: latest
         
     - name: Push Docker image
-      uses: docker/build-push-action@v1.1.2
+      uses: docker/build-push-action@v4.0.0
       with:
         # Username used to log in to a Docker registry. If not set then no login will occur
         username: ${{ secrets.DockerHubUser }}
