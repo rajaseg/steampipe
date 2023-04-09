@@ -32,7 +32,7 @@ jobs:
         image_name: rajaseg/steampipe
         #Dockerfile Path
         path: 'src'
-        dockerfile: 'src/Dockerfile'
+        dockerfile: 'Dockerfile'
         #context: # optional, default is .
         # Docker repository to push an image to, defaults to ghcr.io
         repository: ghcr.io
@@ -57,6 +57,6 @@ jobs:
         # Path to the build context
         path: 'src'
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
-        dockerfile: 'src/Dockerfile'
+        dockerfile: 'Dockerfile'
         # Whether to push the image
         push: true
