@@ -1,4 +1,4 @@
-FROM turbot/steampipe
+FROM ghcr.io/turbot/steampipe
 USER root:0
 RUN apt-get update -y \
  && apt-get install -y git
