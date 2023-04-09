@@ -1,0 +1,24 @@
+name: Docker-Build-Push
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  Steampipe-Docker:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+        
+    - name: Build Image & Push to GHCR
+      uses: macbre/push-to-ghcr@v12
+      with:
+        github_token: ${{ secrets.PERSONAL_TOKEN }}
+        image_name: rajaseg/steampipe
+        path: 'src'
+        dockerfile: 'src/Dockerfile'
+        repository: ghcr.io
+        image_tag: latest
