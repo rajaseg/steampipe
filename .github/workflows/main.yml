@@ -33,7 +33,7 @@ jobs:
         dockerfile: 'src/Dockerfile'
         #context: # optional, default is .
         # Docker repository to push an image to, defaults to ghcr.io
-        repository: ghcr.io/
+        repository: ghcr.io
         # A username to use when pushing an image to docker.io (defaults to the github.actor)
         #docker_io_user: # optional
         # Your docker.io token created via https://hub.docker.com/settings/security
