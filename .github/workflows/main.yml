@@ -43,7 +43,7 @@ jobs:
         # Image tag, e.g. latest. Will overwrite the tag latest tag on a push, and have no effect on a release.
         image_tag: latest
         
-    - name: Push Docker image
+    - name: Build Image & Push to DockerHub
       uses: docker/build-push-action@v4.0.0
       with:
         # Username used to log in to a Docker registry. If not set then no login will occur
@@ -53,7 +53,7 @@ jobs:
         # Docker repository to tag the image with
         repository: ${{ env.ImageName }}
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: 'latest'
+        tags: 'github-${{ env.BuildNumber }}'
         # Path to the build context
         path: 'src'
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
