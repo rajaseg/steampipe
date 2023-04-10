@@ -7,5 +7,4 @@ RUN steampipe plugin install azure
 RUN steampipe plugin install azuread
 RUN  git clone --depth 1 https://github.com/turbot/steampipe-mod-azure-compliance.git /workspace
 WORKDIR /workspace
-CMD ["steampipe", "service", "start", "--foreground", "--dashboard", "--dashboard-listen=network"]
-EXPOSE 9595
+#CMD ["steampipe", "service", "start", "--foreground", "--dashboard", "--dashboard-listen=network"]
