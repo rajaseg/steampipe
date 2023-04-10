@@ -3,18 +3,18 @@ type: docker
 name: Steampipe Docker Container
 
 steps:
-#- name: restore-cache-with-filesystem
-#  image: meltwater/drone-cache:v1.1.0-rc1
-#  pull: always
-#  settings:
-#    archive_format: gzip
-#    backend: filesystem
-#    cache_key: volume
-#    restore: true
-#    exit_code: true
-#  volumes:
-#    - name: cache
-#      path: /tmp/cache
+- name: restore-cache-with-filesystem
+  image: meltwater/drone-cache:v1.1.0-rc1
+  pull: always
+  settings:
+    archive_format: gzip
+    backend: filesystem
+    cache_key: volume
+    restore: true
+    exit_code: true
+  volumes:
+    - name: cache
+      path: /tmp/cache
 
 - name: docker-build-publish  
   image: plugins/docker
@@ -30,18 +30,18 @@ steps:
     dockerfile: Dockerfile
     auto_tag: true
     
-#- name: rebuild-cache-with-filesystem
-#  image: meltwater/drone-cache:v1.1.0-rc1
-#  pull: always
-#  settings:
-#    archive_format: gzip
-#    backend: filesystem
-#    cache_key: volume
-#    rebuild: true
-#    exit_code: true
-#  volumes:
-#    - name: cache
-#      path: /tmp/cache
+- name: rebuild-cache-with-filesystem
+  image: meltwater/drone-cache:v1.1.0-rc1
+  pull: always
+  settings:
+    archive_format: gzip
+    backend: filesystem
+    cache_key: volume
+    rebuild: true
+    exit_code: true
+  volumes:
+    - name: cache
+      path: /tmp/cache
  
 #- name: drone-email
 #  image: drillster/drone-email
@@ -67,8 +67,8 @@ volumes:
 - name: dockersock
   host:
     path: /var/run/docker.sock
-#- name: cache
-#  temp: {}
+- name: cache
+  temp: {}
 when:
   event: push
   branch: [master]
