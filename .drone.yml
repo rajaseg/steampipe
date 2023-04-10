@@ -4,7 +4,7 @@ name: Steampipe Docker Container
 
 steps:
 - name: restore-cache-with-filesystem
-  image: meltwater/drone-cache:v1.1.0-rc1
+  image: meltwater/drone-cache:v1.2.0-rc1
   pull: always
   settings:
     archive_format: gzip
@@ -31,7 +31,7 @@ steps:
     auto_tag: true
     
 - name: rebuild-cache-with-filesystem
-  image: meltwater/drone-cache:v1.1.0-rc1
+  image: meltwater/drone-cache:v1.2.0-rc1
   pull: always
   settings:
     archive_format: gzip
